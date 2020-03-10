@@ -26,12 +26,11 @@ function tryNumber() {
     tip.innerHTML = 'Demasiado bajo';
   } else if (randomNumber < number) {
     tip.innerHTML = 'Demasiado alto';
-  } else if (number > 100) {
-    tip.innerHTML = 'El número debe estar entre 1 y 100';
   }
 }
 let click = 0;
 function counterTries() {
+  /*   debugger; */
   click++;
   if (click >= 1) {
     numberTries.innerHTML = click;
