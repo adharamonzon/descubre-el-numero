@@ -1,0 +1,35 @@
+.title {
+  font-weight: bolder;
+  font-size: 35px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.label-text {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+.input-text {
+  background-color: rgb(204, 200, 200);
+  border-radius: 6px;
+  margin-bottom: 10px;
+  height: 20px;
+  width: 250px;
+}
+.btn {
+  background-color: rgb(97, 212, 247);
+  color: white;
+  width: 100px;
+  height: 25px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+.tips {
+  margin-bottom: 5px;
+  border: solid 2px rgb(238, 216, 216);
+  height: 20px;
+  width: 500px;
+  font-size: 15px;
+}
