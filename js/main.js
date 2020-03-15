@@ -17,23 +17,26 @@ function resultPlay() {
 }
 
 function tryNumber() {
-  /*   debugger; */
   const number = parseInt(snumber.value);
-  if (randomNumber === number) {
+  if (number > 100 || number < 1) {
+    tip.innerHTML = 'El número debe estar entre 1 y 100';
+  } else if (randomNumber === number) {
     tip.innerHTML = 'Has ganado campeona!!!!';
     console.log('has ganado');
   } else if (randomNumber > number) {
-    tip.innerHTML = 'Demasiado bajo';
-  } else if (randomNumber < number) {
-    tip.innerHTML = 'Demasiado alto';
+    tip.innerHTML = 'Pista: Demasiado bajo';
+  } else {
+    tip.innerHTML = 'Pista: Demasiado alto';
   }
+}
+function paintFeedback(element) {
+  tryNumber();
 }
 let click = 0;
 function counterTries() {
-  /*   debugger; */
   click++;
   if (click >= 1) {
-    numberTries.innerHTML = click;
+    numberTries.innerHTML = `Número de intentos: ${click}`;
   }
 }
 
