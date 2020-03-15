@@ -2,35 +2,40 @@
 
 const btn = document.querySelector('.js-btn');
 const snumber = document.querySelector('.js-number');
-const tip = document.querySelector('.js-tip');
 const numberTries = document.querySelector('.js-try-number');
 
 function getRandomNumber(max = 100) {
   return Math.ceil(Math.random() * max);
 }
 const randomNumber = getRandomNumber();
-console.log(randomNumber);
+console.log(`el número aleatorio es ${randomNumber}`);
 
 function resultPlay() {
   tryNumber();
   counterTries();
+  paintResult();
 }
+
+const getInnerHtml = function(element) {
+  return document.querySelector(element).innerHTML;
+};
+let result = getInnerHtml('.js-tip');
 
 function tryNumber() {
   const number = parseInt(snumber.value);
   if (number > 100 || number < 1) {
-    tip.innerHTML = 'El número debe estar entre 1 y 100';
+    result = 'El número debe estar entre 1 y 100';
   } else if (randomNumber === number) {
-    tip.innerHTML = 'Has ganado campeona!!!!';
-    console.log('has ganado');
+    result = 'Has ganado campeona!!!!';
   } else if (randomNumber > number) {
-    tip.innerHTML = 'Pista: Demasiado bajo';
+    result = 'Pista: Demasiado bajo';
   } else {
-    tip.innerHTML = 'Pista: Demasiado alto';
+    result = 'Pista: Demasiado alto';
   }
 }
-function paintFeedback(element) {
-  tryNumber();
+function paintResult() {
+  const text = document.querySelector('.js-tip');
+  text.innerHTML = result;
 }
 let click = 0;
 function counterTries() {
