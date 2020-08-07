@@ -16,7 +16,7 @@ function resultPlay() {
   paintResult();
 }
 
-const getInnerHtml = function(element) {
+const getInnerHtml = function (element) {
   return document.querySelector(element).innerHTML;
 };
 let result = getInnerHtml('.js-tip');
@@ -26,7 +26,7 @@ function tryNumber() {
   if (number > 100 || number < 1) {
     result = 'El número debe estar entre 1 y 100';
   } else if (randomNumber === number) {
-    result = 'Has ganado campeona!!!!';
+    result = 'Has ganado!!!!';
   } else if (randomNumber > number) {
     result = 'Pista: Demasiado bajo';
   } else {
